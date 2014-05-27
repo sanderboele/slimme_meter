@@ -1,0 +1,16 @@
+rrdtool create stroom.rrd --step 60 \
+DS:dal_in:COUNTER:80:U:U \
+DS:dal_out:COUNTER:80:U:U \
+DS:piek_in:COUNTER:80:U:U \
+DS:piek_out:COUNTER:80:U:U \
+RRA:AVERAGE:0:1:10080 \
+RRA:AVERAGE:0:10:52560 \
+RRA:AVERAGE:0:60:87600 \
+RRA:AVERAGE:0:1440:17800 \
+RRA:MAX:0:10:52560 \
+RRA:MAX:0:60:87600 \
+RRA:MAX:0:1440:17800
+
+rrdtool create gas.rrd --step 3600 \
+DS:gas:COUNTER:7200:U:U \
+RRA:AVERAGE:0:1:219000
